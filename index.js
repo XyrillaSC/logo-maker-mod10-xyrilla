@@ -1,39 +1,10 @@
-const inquirer = require('inquirer');
-const fs = require('fs')
+// const inquirer = require('inquirer');
+// const fs = require('fs')
+// const { Circle, Triangle, Square } = require('./shapes.js');
 
-class Shape {
-  constructor(shapeColor) {
-      this.color = shapeColor
-  }
-}
-class Circle extends Shape {
-  makeShape() {
-      return `<circle cx="150" cy="100" r="50" fill='${this.color}'/>`
-  }
-}
-class Triangle extends Shape {
-  makeShape() {
-      return `<polygon points="150,40 85,150 215,150" fill='${this.color}' class="triangle" />`
-  }
-}
-class Square extends Shape {
-  makeShape() {
-      return `<rect x="100" y="50" width="100" height="100" fill='${this.color}'/>`
-  }
-}
-
-
-{/* <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="150" cy="100" r="50" fill=''/>
-  <rect x="100" y="50" width="100" height="100" fill=''/>
-  <polygon points="150,40 85,150 215,150" fill='' class="triangle" />
-  <text font-size="50" text-anchor="middle" fill='white' x="150" y="120">SAK</text>
-
-</svg> */}
-
-
-
-
+import inquirer from 'inquirer';
+import fs from 'fs';
+import { Circle, Triangle, Square } from './lib/shapes.js';
 
 
 inquirer
@@ -62,13 +33,7 @@ inquirer
   ])
   .then((answers) => {
     let shape = ''
-    // if (answers.shape === 'Circle') {
-    //     shape = `<circle cx="150" cy="100" r="50" fill='${answers.shapeColor}'/>`
-    // } else if (answers.shape === 'Square') {
-    //     shape = `<rect x="100" y="50" width="100" height="100" fill='${answers.shapeColor}'/>`
-    // } else if (answers.shape === 'Triangle') {
-    //     shape = `<polygon points="150,40 85,150 215,150" fill='${answers.shapeColor}' class="triangle" />`
-    // }
+
     if (answers.shape === 'Circle') {
         shape = new Circle(answers.shapeColor)
         shape = shape.makeShape()
@@ -85,9 +50,6 @@ inquirer
     ${shape}
     ${text}
     </svg>`
-
-
-
 
     fs.writeFile('./examples/logo.svg', content, err => {
       if (err) {
