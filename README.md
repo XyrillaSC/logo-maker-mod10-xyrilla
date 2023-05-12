@@ -6,3 +6,4 @@ This application walks the user through creating a logo in the svg format. It al
 
 ## Walkthrough Video
 
+https://github.com/XyrillaSC/logo-maker-mod10-xyrilla/assets/111295666/74087fde-9358-4519-8495-43992f0075ef
