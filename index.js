@@ -56,6 +56,7 @@ inquirer
         console.error(err);
       }
       // file written successfully
+      console.log('generated logo.svg')
     });
   })
   .catch((error) => {
