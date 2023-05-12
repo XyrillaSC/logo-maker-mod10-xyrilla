@@ -1,4 +1,4 @@
-# Skylar's README Maker (Mod9)
+# Skylar's Logo Maker (Mod10)
 
 ## Description
 
